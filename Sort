@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("[Overloaded Sort]");
+        System.out.println("What data type do you want to enter?");
+        String datatype = sc.nextLine().toLowerCase();
+        int[] intarr = new int[8];
+        char[] chararr = new char[8];
+        float[] floatarr = new float[8];
+        switch (datatype){
+            case "float":
+                for (int i = 0; i < floatarr.length; i++) {
+                    System.out.print("Value " + (i+1) +": ");
+                    floatarr[i] = sc.nextFloat();
+
+                }
+                arraySort(floatarr);
+                System.out.println("The sorted values are: ");
+                for(int i = 0; i < floatarr.length; i++) {
+                    System.out.print(floatarr[i] + " ,");
+                }
+
+                break;
+            case "char":
+                for (int i = 0; i < chararr.length; i++) {
+                    System.out.print("Value " + (i+1) +": ");
+                    chararr[i] = sc.nextLine().charAt(0);
+
+                }
+                arraySort(chararr);
+                System.out.println("The sorted values are: ");
+                for(int i = 0; i < chararr.length; i++) {
+                    System.out.print(chararr[i] + " ,");
+                }
+
+                break;
+            case "int":
+                for (int i = 0; i < intarr.length; i++) {
+                    System.out.print("Value " + (i+1) +": ");
+                    intarr[i] = sc.nextInt();
+
+                }
+                arraySort(intarr);
+                System.out.println("The sorted values are: ");
+                for(int i = 0; i < intarr.length; i++) {
+                    System.out.print(intarr[i] + " ,");
+                }
+
+
+                    break;
+        }
+
+
+
+    }
+    public static void arraySort (int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for(int j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j] > arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+    }
+    public static void arraySort(char[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for(int j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j] > arr[j+1]) {
+                    char temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+    public static void arraySort(float[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for(int j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j] > arr[j+1]) {
+                    float temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+}
